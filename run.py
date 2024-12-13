@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_restplus import Api
+from flask_restx import Api
 from config import database
 from route import company_route
 
@@ -15,7 +15,9 @@ api = Api(app,
 def add_namespace():
     api.add_namespace(company_route.api)
 
+database.create_database(app)
+add_namespace()
+
+
 if __name__ == '__main__':
-    database.create_database(app)
-    add_namespace()
     app.run()
