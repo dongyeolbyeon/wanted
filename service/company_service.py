@@ -41,7 +41,7 @@ def update_company(company_id, col_target, company_tag):
     company[f"company_name_{col_target}"] = company[f"company_name_{col_target}"] + "|" + company_tag
     db.session.commit()
 
-    return jsonify(company.to_dict())
+    return jsonify(company)
 
 
 def delete_company(company_id, col_target, company_tag):
@@ -55,4 +55,4 @@ def delete_company(company_id, col_target, company_tag):
     company[f"company_name_{col_target}"] = '|'.join(tag)
     db.session.commit()
 
-    return jsonify(company.to_dict())
+    return jsonify(company)
