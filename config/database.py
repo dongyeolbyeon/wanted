@@ -10,7 +10,7 @@ _db_password = 'wanted'
 
 
 def create_database(app):
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://' + _db_username + ':' + _db_password + '@' + _db_host + ':3306/' + _db_name
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://' + _db_username + ':' + _db_password + '@' + _db_host + ':3306/' + _db_name
     app.config['SQLALCHEMY_POOL_SIZE'] = 20
     app.config['SQLALCHEMY_POOL_TIMEOUT'] = 50
     app.config['SQLALCHEMY_POOL_RECYCLE'] = 1800
