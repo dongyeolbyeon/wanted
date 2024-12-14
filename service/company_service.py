@@ -39,7 +39,6 @@ def update_company(company_id, col_target, company_tag):
         return jsonify({"error": "Company not found"}), 404
 
     company[f"company_tag_{col_target}"] += ("|" if company[f"company_tag_{col_target}"] else "") + company_tag
-    print(company[f"company_tag_{col_target}"])
 
     db.session.commit()
 
