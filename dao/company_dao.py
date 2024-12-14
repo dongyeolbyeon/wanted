@@ -2,6 +2,7 @@ from config.database import db
 
 class Company(db.Model):
     __tablename__ = 'wanted_company'
+    __bind_key__ = 'cluster'
     __table_args__ = {
         'mysql_collate': 'utf8mb4_general_ci'
     }
